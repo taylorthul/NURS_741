@@ -118,5 +118,26 @@ iris_preview <- dbGetQuery(sc, "SELECT * FROM iris LIMIT 10")
 iris_preview
 
 
+load(dplyr)
+url <- "https://raw.githubusercontent.com/steviep42/youtube/master/YOUTUBE.DIR/msleep_ggplot2.csv"
+msleep <- read.csv(url)
+names(msleep) 
 
+#trying the in class exercise
+head(msleep)
+filter(msleep, vore == "carni") #use this when you know exactly what you want
+filter(msleep, "carni" %in% vore) #in function so you are looking for 
+#something within something else 
+#now to actually do the prompts in the PDF
+#select the name and sleep_total columns
+select(msleep, name, sleep_total)
+#using the colon operator select all columns between name and order
+select(msleep, name:order)
+#select all columns that begin with "sl" 
+select(msleep, starts_with("sl"))
+#filter the dataframe to find only rows with a sleep_total >=16
+
+#filter the rows for mammals that sleep a total > 16 
+#and body weight < 1 kg
+#arrange the data frame using the order column 
 
